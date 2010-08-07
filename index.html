@@ -103,12 +103,12 @@
       clear:both;
     }
     
-    #processors,#about, #contributors{ display: none;}
-    
 	</style>
 	<script src="jquery-1.4.2.min.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript" charset="utf-8">
 	 $('document').ready(function() {
+	   $('#processors, #about, #contributors').hide();
+	   
 	   $('#menu li a').bind('click',function() {
        var that = $(this);
        $('.selected').removeClass('selected');
