@@ -1,0 +1,440 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+        <head><title>All classes and objects in org.lifty.engine</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.7.final)" name="generator"></meta><link href="../../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../../script.js"></script>
+        </head>
+        <body onload="init()"><div class="page-title"><div>lifty-engine 0.3 API</div></div><p><div>This document is the API specification for lifty-engine 0.3 API</div></p><table summary="" cellpadding="3" class="member">
+        <tr><td class="title" colspan="2">Class Summary</td></tr>
+        <tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/lifty/engine/Argument.html" target="_self">Argument</a></em>
+        (<code>val </code><em>name</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>)<code> extends </code><a href="../../org/lifty/engine/BasicArgument.html" target="_self">BasicArgument</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div>This is a plain argument, it has no default value and it is required.
+ Use this is none of the other classes that extend BasicArguments fits 
+ your needs.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/lifty/engine/ArgumentResult.html" target="_self">ArgumentResult</a></em>
+        (<code>val </code><em>argument</em> : <a href="../../org/lifty/engine/BasicArgument.html" target="_self">BasicArgument</a>, <code>val </code><em>value</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>)<code> extends </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/lifty/engine/BasicArgument.html" target="_self">BasicArgument</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/lifty/engine/Create.html" target="_self">Create</a></em>
+        <code> extends </code><a href="../../org/lifty/engine/Operation.html" target="_self">Operation</a><code> with </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/lifty/engine/Default.html" target="_self">Default</a></em>
+        <code> extends </code><a href="../../org/lifty/engine/BasicArgument.html" target="_self">BasicArgument</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/lifty/engine/Delete.html" target="_self">Delete</a></em>
+        <code> extends </code><a href="../../org/lifty/engine/Operation.html" target="_self">Operation</a><code> with </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/lifty/engine/GroupTemplates.html" target="_self">GroupTemplates</a></em>
+        (<code>val </code><em>templates</em> : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../org/lifty/engine/Template.html" target="_self">Template</a>])<code> extends </code><a href="../../org/lifty/engine/Template.html" target="_self">Template</a><code> with </code><a href="../../org/lifty/engine/Create.html" target="_self">Create</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div>This will create a Template with no arguments or files but a lot of dependencies.
+ This is a convenient way to group templates together</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/lifty/engine/Injectable.html" target="_self">Injectable</a></em>
+        (<code>val </code><em>pathToFile</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <code>val </code><em>dependentTemplate</em> : <a href="../../org/lifty/engine/Template.html" target="_self">Template</a>)<code> extends </code><a href="../../org/lifty/engine/InjectableTrait.html" target="_self">InjectableTrait</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/lifty/engine/InjectableIntoFile.html" target="_self">InjectableIntoFile</a></em>
+        (<code>val </code><em>injectable</em> : <a href="../../org/lifty/engine/InjectableTrait.html" target="_self">InjectableTrait</a>, <code>val </code><em>pathToTemplate</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>)<code> extends </code><a href="../../org/lifty/engine/InjectableIntoFileTrait.html" target="_self">InjectableIntoFileTrait</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/lifty/engine/InjectableIntoFileTrait.html" target="_self">InjectableIntoFileTrait</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/lifty/engine/InjectableTrait.html" target="_self">InjectableTrait</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/lifty/engine/Operation.html" target="_self">Operation</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/lifty/engine/Optional.html" target="_self">Optional</a></em>
+        <code> extends </code><a href="../../org/lifty/engine/BasicArgument.html" target="_self">BasicArgument</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/lifty/engine/PackageArgument.html" target="_self">PackageArgument</a></em>
+        (<code>val </code><em>name</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>)<code> extends </code><a href="../../org/lifty/engine/BasicArgument.html" target="_self">BasicArgument</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div>This instance will convert it's own value when uses in paths to.
+ If the value com.sidewayscoding is given as a value it will get
+ converted to com/sidewayscoding in paths.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/lifty/engine/Repeatable.html" target="_self">Repeatable</a></em>
+        <code> extends </code><a href="../../org/lifty/engine/BasicArgument.html" target="_self">BasicArgument</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/lifty/engine/SBTLogger.html" target="_self">SBTLogger</a></em>
+        (<code>val </code><em>logger</em> : <a href="" target="contentFrame" class="sbt/Logger">sbt.Logger</a>)<code> extends </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/lifty/engine/SBTTemplateProcessor.html" target="_self">SBTTemplateProcessor</a></em>
+        <code> extends </code><a href="" target="contentFrame" class="sbt/processor/BasicProcessor">sbt.processor.BasicProcessor</a><code> with </code><a href="../../org/lifty/engine/TemplateProcessor.html" target="_self">TemplateProcessor</a>
+        
+        <div>This is the class you want to extend if you're creating an SBT processor</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/lifty/engine/Scalate.html" target="_self">Scalate</a></em>
+        (<code>val </code><em>template</em> : <a href="../../org/lifty/engine/Template.html" target="_self">Template</a><code> with </code><a href="../../org/lifty/engine/Create.html" target="_self">Create</a>, <code>val </code><em>argumentResults</em> : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../org/lifty/engine/ArgumentResult.html" target="_self">ArgumentResult</a>])<code> extends </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/lifty/engine/StandAloneTemplateProcessor.html" target="_self">StandAloneTemplateProcessor</a></em>
+        <code> extends </code><a href="../../org/lifty/engine/TemplateProcessor.html" target="_self">TemplateProcessor</a>
+        
+        <div>This is the class you want to extend if you're creating an stand alone app</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/lifty/engine/Template.html" target="_self">Template</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>A template is something you want your processor to be able to creates. 
+ Create an object or class that mixis in this trait and hand it to the 
+ processor and the framework takes care of the rest.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/lifty/engine/TemplateFile.html" target="_self">TemplateFile</a></em>
+        (<code>val </code><em>file</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <code>val </code><em>destination</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>)<code> extends </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div>A template file is used to keep a relation between a path to a file
+ and where you want to place that file onces it has been rendered/copied</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/lifty/engine/TemplateInjection.html" target="_self">TemplateInjection</a></em>
+        (<code>val </code><em>file</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <code>val </code><em>into</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <code>val </code><em>point</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <code>val </code><em>dependentTemplate</em> : <a href="../../org/lifty/engine/Template.html" target="_self">Template</a>)<code> extends </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div>This represents something that you want to inject into at file. You are not meant to create instances
+ of this class my yourself. Use the Template DSL and instances of this call will get created.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/lifty/engine/TemplateProcessor.html" target="_self">TemplateProcessor</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/lifty/engine/Value.html" target="_self">Value</a></em>
+        <code> extends </code><a href="../../org/lifty/engine/Default.html" target="_self">Default</a>
+        
+        
+      </td>
+    </tr>        
+        </table>
+<table summary="" cellpadding="3" class="member">
+        <tr><td class="title" colspan="2">Object Summary</td></tr>
+        <tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/lifty/engine/Argument$object.html" target="_self">Argument</a></em>
+        <code> extends </code>(<a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) =&gt; <a href="../../org/lifty/engine/Argument.html" target="_self">Argument</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/lifty/engine/ArgumentResult$object.html" target="_self">ArgumentResult</a></em>
+        <code> extends </code>(<a href="../../org/lifty/engine/BasicArgument.html" target="_self">BasicArgument</a>, <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) =&gt; <a href="../../org/lifty/engine/ArgumentResult.html" target="_self">ArgumentResult</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/lifty/engine/CurrentProcessor$object.html" target="_self">CurrentProcessor</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/lifty/engine/GlobalConfiguration$object.html" target="_self">GlobalConfiguration</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>Used to store information about the classpath and other stuff that is different
+ for the app if it's running as a processor vs. sbt console</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/lifty/engine/GroupTemplates$object.html" target="_self">GroupTemplates</a></em>
+        <code> extends </code>(<a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../org/lifty/engine/Template.html" target="_self">Template</a>]) =&gt; <a href="../../org/lifty/engine/GroupTemplates.html" target="_self">GroupTemplates</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/lifty/engine/Injectable$object.html" target="_self">Injectable</a></em>
+        <code> extends </code>(<a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <a href="../../org/lifty/engine/Template.html" target="_self">Template</a>) =&gt; <a href="../../org/lifty/engine/Injectable.html" target="_self">Injectable</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/lifty/engine/InjectableIntoFile$object.html" target="_self">InjectableIntoFile</a></em>
+        <code> extends </code>(<a href="../../org/lifty/engine/InjectableTrait.html" target="_self">InjectableTrait</a>, <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) =&gt; <a href="../../org/lifty/engine/InjectableIntoFile.html" target="_self">InjectableIntoFile</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/lifty/engine/PackageArgument$object.html" target="_self">PackageArgument</a></em>
+        <code> extends </code>(<a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) =&gt; <a href="../../org/lifty/engine/PackageArgument.html" target="_self">PackageArgument</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/lifty/engine/RegularExpressions$object.html" target="_self">RegularExpressions</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/lifty/engine/SBTLogger$object.html" target="_self">SBTLogger</a></em>
+        <code> extends </code>(<a href="" target="contentFrame" class="sbt/Logger">sbt.Logger</a>) =&gt; <a href="../../org/lifty/engine/SBTLogger.html" target="_self">SBTLogger</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/lifty/engine/Scalate$object.html" target="_self">Scalate</a></em>
+        <code> extends </code>(<a href="../../org/lifty/engine/Template.html" target="_self">Template</a><code> with </code><a href="../../org/lifty/engine/Create.html" target="_self">Create</a>, <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../org/lifty/engine/ArgumentResult.html" target="_self">ArgumentResult</a>]) =&gt; <a href="../../org/lifty/engine/Scalate.html" target="_self">Scalate</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/lifty/engine/TemplateEngineLogger$object.html" target="_self">TemplateEngineLogger</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/lifty/engine/TemplateFile$object.html" target="_self">TemplateFile</a></em>
+        <code> extends </code>(<a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) =&gt; <a href="../../org/lifty/engine/TemplateFile.html" target="_self">TemplateFile</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/lifty/engine/TemplateInjection$object.html" target="_self">TemplateInjection</a></em>
+        <code> extends </code>(<a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <a href="../../org/lifty/engine/Template.html" target="_self">Template</a>) =&gt; <a href="../../org/lifty/engine/TemplateInjection.html" target="_self">TemplateInjection</a>
+        
+        
+      </td>
+    </tr>        
+        </table></body>
+      </html>

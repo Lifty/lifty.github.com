@@ -1,0 +1,436 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+        <head><title>class GroupTemplates in org.lifty.engine</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.7.final)" name="generator"></meta><link href="../../../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../../../script.js"></script>
+        </head>
+        <body onload="init()">
+        <table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">lifty-engine 0.3 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+        
+      <div class="entity">
+        <a href="../../../org/lifty/engine$package.html" target="_self">org.lifty.engine</a>
+        <br></br>
+        <span class="entity">class  GroupTemplates</span>
+      </div><hr></hr>
+      <div class="source">
+        [source: <a href="" class="org/lifty/engine/GroupTemplates"><code>org/lifty/engine/GroupTemplates.scala</code></a>]
+      </div><hr></hr>
+      <a name="GroupTemplates"></a><dl>
+      <dt>
+        
+        <code>case</code>
+        <code>class</code>
+        <em>GroupTemplates</em>(<code>val </code><em>templates</em> : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../../org/lifty/engine/Template.html" target="_self">Template</a>])
+      </dt>
+      <dd><code> extends </code><a href="../../../org/lifty/engine/Template.html" target="_self">Template</a><code> with </code><a href="../../../org/lifty/engine/Create.html" target="_self">Create</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a></dd>
+    </dl>
+      <dl><dd>This will create a Template with no arguments or files but a lot of dependencies.
+ This is a convenient way to group templates together</dd></dl>
+      <dl></dl>
+    
+      
+
+
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Method Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/lifty/engine/GroupTemplates.html#arguments" target="_self">arguments</a></em>
+         : <a href="#Nil" target="contentFrame" class="scala">scala.Nil</a>
+        
+        <div>This is the list of arguments that the template needs.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>override def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/lifty/engine/GroupTemplates.html#dependencies" target="_self">dependencies</a></em>
+         : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../../org/lifty/engine/Template.html" target="_self">Template</a>]
+        
+        <div>Override this method if you want your template to depend on other templates.
+  The order of the templates is important. If there are any conflicts with the
+  files declared in the templates the conflicting files in the first named template 
+  will get used</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/lifty/engine/GroupTemplates.html#description" target="_self">description</a></em>
+         : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
+        
+        <div>Provides a description of the template. This will get used to help the users
+  know what they're creating.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>override def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/lifty/engine/GroupTemplates.html#equals%28Any%29" target="_self">equals</a></em>
+        (<em>arg0</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+        
+        <div>This method is used to compare the receiver object (<code>this</code>)
+    with the argument object (<code>arg0</code>) for equivalence.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/lifty/engine/GroupTemplates.html#files" target="_self">files</a></em>
+         : <a href="#Nil" target="contentFrame" class="scala">scala.Nil</a>
+        
+        <div>The is the list of files that you want your template to process once invoked</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>override def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/lifty/engine/GroupTemplates.html#hashCode%28%29" target="_self">hashCode</a></em>
+         : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>
+        
+        <div>Returns a hash code value for the object.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/lifty/engine/GroupTemplates.html#name" target="_self">name</a></em>
+         : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
+        
+        <div>The name of the template. This is used to figure out which template the 
+  user is trying to invoke when writig processorName create <templateName>.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>override def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/lifty/engine/GroupTemplates.html#productArity" target="_self">productArity</a></em>
+         : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>override def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/lifty/engine/GroupTemplates.html#productElement%28Int%29" target="_self">productElement</a></em>
+        (<em>arg0</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>override def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/lifty/engine/GroupTemplates.html#productPrefix" target="_self">productPrefix</a></em>
+         : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
+        
+        
+      </td>
+    </tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/lifty/engine/Create.html" target="_self">Create</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/lifty/engine/Create.html#create%28List%5BString%5D%29" target="_self">create</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/lifty/engine/Template.html" target="_self">Template</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/lifty/engine/Template.html#notice%28List%5Borg.lifty.engine.ArgumentResult%5D%29" target="_self">notice</a>, <a href="../../../org/lifty/engine/Template.html#injectContentsOfFile%28String%29" target="_self">injectContentsOfFile</a>, <a href="../../../org/lifty/engine/Template.html#fixedValues" target="_self">fixedValues</a>, <a href="../../../org/lifty/engine/Template.html#preRenderAction%28List%5Borg.lifty.engine.ArgumentResult%5D%29" target="_self">preRenderAction</a>, <a href="../../../org/lifty/engine/Template.html#postRenderAction%28List%5Borg.lifty.engine.ArgumentResult%5D%29" target="_self">postRenderAction</a>, <a href="../../../org/lifty/engine/Template.html#process%28String%2CList%5BString%5D%29" target="_self">process</a>, <a href="../../../org/lifty/engine/Template.html#getAllFiles" target="_self">getAllFiles</a>, <a href="../../../org/lifty/engine/Template.html#getAllDependencies" target="_self">getAllDependencies</a>, <a href="../../../org/lifty/engine/Template.html#getAllArguments" target="_self">getAllArguments</a>, <a href="../../../org/lifty/engine/Template.html#injections" target="_self">injections</a>, <a href="../../../org/lifty/engine/Template.html#addInjection%28org.lifty.engine.TemplateInjection%29" target="_self">addInjection</a>, <a href="../../../org/lifty/engine/Template.html#hasDependencies" target="_self">hasDependencies</a>, <a href="../../../org/lifty/engine/Template.html#parseArguments%28List%5BString%5D%29" target="_self">parseArguments</a>, <a href="../../../org/lifty/engine/Template.html#parseIndexedArguments%28List%5BString%5D%29" target="_self">parseIndexedArguments</a>, <a href="../../../org/lifty/engine/Template.html#toString%28%29" target="_self">toString</a>, <a href="../../../org/lifty/engine/Template.html#deleteFiles%28List%5Borg.lifty.engine.ArgumentResult%5D%29" target="_self">deleteFiles</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#getClass%28%29" target="_self">getClass</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#clone%28%29" target="_self">clone</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notify%28%29" target="_self">notify</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notifyAll%28%29" target="_self">notifyAll</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%2CInt%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#finalize%28%29" target="_self">finalize</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%3D%3D%28AnyRef%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%21%3D%28AnyRef%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#eq%28AnyRef%29" target="_self">eq</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#ne%28AnyRef%29" target="_self">ne</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#synchronized%28T0%29" target="_self">synchronized</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%3D%3D%28Any%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%21%3D%28Any%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#isInstanceOf" target="_self">isInstanceOf</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#asInstanceOf" target="_self">asInstanceOf</a>
+        </td></tr>
+      </table>
+
+
+      
+
+
+<table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Method Details</td></tr>
+        </table><div><a name="name"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>name</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>The name of the template. This is used to figure out which template the 
+  user is trying to invoke when writig processorName create <templateName>.</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Parameters</b></dt><dd><code>name - </code>The name of the template</dd><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>The name of the template</dd></dl>
+    <dl>
+        <dt style="margin:10px 0 0 20px;">
+          <b>Overrides</b>
+        </dt>
+        <dd>
+        <a href="../../../org/lifty/engine/Template.html" target="_self">Template</a>.<a href="../../../org/lifty/engine/Template.html#name" target="_self">name</a>
+        </dd>
+      </dl><hr></hr>
+<a name="description"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>description</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Provides a description of the template. This will get used to help the users
+  know what they're creating.</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>A description of the template</dd></dl>
+    <dl>
+        <dt style="margin:10px 0 0 20px;">
+          <b>Overrides</b>
+        </dt>
+        <dd>
+        <a href="../../../org/lifty/engine/Template.html" target="_self">Template</a>.<a href="../../../org/lifty/engine/Template.html#description" target="_self">description</a>
+        </dd>
+      </dl><hr></hr>
+<a name="files"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>files</em> : <a href="#Nil" target="contentFrame" class="scala">scala.Nil</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>The is the list of files that you want your template to process once invoked</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Parameters</b></dt><dd><code>files - </code>A list of TemplateFile</dd><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>The list of TemplateFile</dd></dl>
+    <dl>
+        <dt style="margin:10px 0 0 20px;">
+          <b>Overrides</b>
+        </dt>
+        <dd>
+        <a href="../../../org/lifty/engine/Template.html" target="_self">Template</a>.<a href="../../../org/lifty/engine/Template.html#files" target="_self">files</a>
+        </dd>
+      </dl><hr></hr>
+<a name="arguments"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>arguments</em> : <a href="#Nil" target="contentFrame" class="scala">scala.Nil</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>This is the list of arguments that the template needs.</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Parameters</b></dt><dd><code>arguments - </code>The list of arguments</dd><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>The list of arguments</dd></dl>
+    <dl>
+        <dt style="margin:10px 0 0 20px;">
+          <b>Overrides</b>
+        </dt>
+        <dd>
+        <a href="../../../org/lifty/engine/Template.html" target="_self">Template</a>.<a href="../../../org/lifty/engine/Template.html#arguments" target="_self">arguments</a>
+        </dd>
+      </dl><hr></hr>
+<a name="dependencies"></a><dl>
+      <dt>
+        
+        <code>override</code>
+        <code>def</code>
+        <em>dependencies</em> : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../../org/lifty/engine/Template.html" target="_self">Template</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Override this method if you want your template to depend on other templates.
+  The order of the templates is important. If there are any conflicts with the
+  files declared in the templates the conflicting files in the first named template 
+  will get used</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>The list of templates the template depends on</dd></dl>
+    <dl>
+        <dt style="margin:10px 0 0 20px;">
+          <b>Overrides</b>
+        </dt>
+        <dd>
+        <a href="../../../org/lifty/engine/Template.html" target="_self">Template</a>.<a href="../../../org/lifty/engine/Template.html#dependencies" target="_self">dependencies</a>
+        </dd>
+      </dl><hr></hr>
+<a name="hashCode%28%29"></a><dl>
+      <dt>
+        
+        <code>override</code>
+        <code>def</code>
+        <em>hashCode</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Returns a hash code value for the object.  
+    <p>
+    The default hashing algorithm is platform dependent.  
+    Note that it is allowed for two objects to have identical hash
+    codes (<code>o1.hashCode.equals(o2.hashCode)</code>) yet not be
+    equal (<code>o1.equals(o2)</code> returns <code>false</code>).  A
+    degenerate implementation could always return <code>0</code>.
+    However, it is required that if two objects are equal
+    (<code>o1.equals(o2)</code> returns <code>true</code>) that they
+    have identical hash codes
+    (<code>o1.hashCode.equals(o2.hashCode)</code>).  Therefore, when
+    overriding this method, be sure to verify that the behavior is
+    consistent with the <code>equals</code> method.
+    </p>
+    <p></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>the hash code value for the object.      </p></dd></dl>
+    <hr></hr>
+<a name="equals%28Any%29"></a><dl>
+      <dt>
+        
+        <code>override</code>
+        <code>def</code>
+        <em>equals</em>(<em>arg0</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>This method is used to compare the receiver object (<code>this</code>)
+    with the argument object (<code>arg0</code>) for equivalence.  
+    
+    <p>
+    The default implementations of this method is an <a
+    href="http://en.wikipedia.org/wiki/Equivalence_relation">equivalence
+    relation</a>:
+      <ul>
+      <li>It is reflexive: for any instance <code>x</code> of type <code>Any</code>, 
+      <code>x.equals(x)</code> should return <code>true</code>.</li>
+      <li>It is symmetric: for any instances <code>x</code> and <code>y</code> of type 
+      <code>Any</code>, <code>x.equals(y)</code> should return <code>true</code> if and only 
+      if <code>y.equals(x)</code> returns <code>true</code>.</li>
+      <li>It is transitive: for any instances 
+      <code>x</code>, <code>y</code>, and <code>z</code> of type <code>AnyRef</code>
+      if <code>x.equals(y)</code> returns <code>true</code> and 
+      <code>y.equals(z)</code> returns 
+      <code>true</code>, then <code>x.equals(z)</code> should return <code>true</code>.</li>
+    </ul>
+    </p>
+    <p>
+    If you override this method, you should verify that
+    your implementation remains an equivalence relation.
+    Additionally, when overriding this method it is often necessary to
+    override <code>hashCode</code> to ensure that objects that are
+    "equal" (<code>o1.equals(o2)</code> returns <code>true</code>)
+    hash to the same <a href="Int.html"><code>Int</code></a>
+    (<code>o1.hashCode.equals(o2.hashCode)</code>).</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Parameters</b></dt><dd><code>arg0 - </code>the object to compare against this object for equality.</dd><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.    </p></dd></dl>
+    <hr></hr>
+<a name="productPrefix"></a><dl>
+      <dt>
+        
+        <code>override</code>
+        <code>def</code>
+        <em>productPrefix</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
+      </dt>
+      <dd></dd>
+    </dl><dl>
+        <dt style="margin:10px 0 0 20px;">
+          <b>Overrides</b>
+        </dt>
+        <dd>
+        <a href="" target="contentFrame" class="scala/Product">scala.Product</a>.<a href="#productPrefix" target="contentFrame" class="scala/Product">scala.Product.productPrefix</a>
+        </dd>
+      </dl><hr></hr>
+<a name="productArity"></a><dl>
+      <dt>
+        
+        <code>override</code>
+        <code>def</code>
+        <em>productArity</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>
+      </dt>
+      <dd></dd>
+    </dl><dl>
+        <dt style="margin:10px 0 0 20px;">
+          <b>Overrides</b>
+        </dt>
+        <dd>
+        <a href="" target="contentFrame" class="scala/Product">scala.Product</a>.<a href="#productArity" target="contentFrame" class="scala/Product">scala.Product.productArity</a>
+        </dd>
+      </dl><hr></hr>
+<a name="productElement%28Int%29"></a><dl>
+      <dt>
+        
+        <code>override</code>
+        <code>def</code>
+        <em>productElement</em>(<em>arg0</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
+      </dt>
+      <dd></dd>
+    </dl><dl>
+        <dt style="margin:10px 0 0 20px;">
+          <b>Overrides</b>
+        </dt>
+        <dd>
+        <a href="" target="contentFrame" class="scala/Product">scala.Product</a>.<a href="#productElement" target="contentFrame" class="scala/Product">scala.Product.productElement</a>
+        </dd>
+      </dl><hr></hr></div>
+
+
+    <hr></hr>
+        <table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">lifty-engine 0.3 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+      </body>
+      </html>

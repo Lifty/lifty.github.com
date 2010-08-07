@@ -58,7 +58,7 @@
     }
     
     #menu li.first {
-      width: 279px;
+      width: 227px;
     }
     
     #menu li.first h1 {
@@ -108,7 +108,7 @@
 	<script src="jquery-1.4.2.min.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript" charset="utf-8">
 	 $('document').ready(function() {
-	   $('#processors, #about, #contributors').hide();
+	   $('#processors, #about, #contributors, #docs').hide();
 	   
 	   $('#menu li a').bind('click',function() {
        var that = $(this);
@@ -133,6 +133,7 @@
       <li><a class="selected" href="#news">News</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#processors">Processors</a></li>
+      <li><a href="#docs">Docs</a>
       <li class="last"><a href="#contributors">Contributors</a></li>
       <div class="clearfix"></div>
     </ul>
@@ -246,6 +247,14 @@
         <strong>Github org</strong>: <a href="http://github.com/Lifty" target="_blank">http://github.com/Lifty</a> <br />
       </p>
       
+    </div>
+  
+    <div id="docs">
+      <p>The following is a list of the documentation that's currently available for Lifty</p>
+      <ul>
+        <li><a href="http://lifty.github.com/Lifty-engine/#your_first_processor" target="_blank">Writing your first processor using Lifty</a></li>
+        <li><a href="api/index.html">API documentation</a></li>
+      </ul>
     </div>
   
     <div id="contributors">
