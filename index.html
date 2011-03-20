@@ -1,296 +1,303 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
-   "http://www.w3.org/TR/html4/strict.dtd">
+          "http://www.w3.org/TR/html4/strict.dtd">
 
 <html lang="en">
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>Lifty</title>
-	<meta name="generator" content="TextMate http://macromates.com/">
-	<meta name="author" content="Mads Hartmann Jensen">
-	<!-- Date: 2010-08-06 -->
-	<style type="text/css" media="screen">
-  	body {
+  <head>
+	  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	  <title>Lifty</title>
+	  <meta name="generator" content="TextMate http://macromates.com/">
+	  <meta name="author" content="Mads Hartmann Jensen">
+	  <!-- Date: 2010-08-06 -->
+	  <style type="text/css" media="screen">
+  	  body {
 	    font-size: 14px;
 	    font-family: Helvetica;
 	    color: #444;
-  	}
-  	a {
+  	  }
+  	  a {
   	  color: #000;
   	  outline: none;
-  	}
-	  #container {
+  	  }
+	    #container {
 	    width: 600px;
 	    margin: 0px auto;
-	  }
-	  #content {
+	    }
+	    #content {
 	    padding: 0px 20px;
       text-align:justify;
-	  }
-	  h1 {
+	    }
+	    h1 {
 	    display: inline;
 	    font-size: 1em;
 	    margin: 0px;
 	    padding: 0px;
-	  }
-	  h2 {
+	    }
+	    h2 {
       clear: left;
-    }
-    span.date {
+      }
+      span.date {
       font-size: 12px;
       color: #cecece;
-    }
-    h3 {
+      }
+      h3 {
       padding-bottom: 0px;
       margin-bottom: 0px;
-    }
-    p {
+      }
+      p {
       margin-top: 5px;
-    }
-	  #menu {
+      }
+	    #menu {
 	    list-style: none;
 	    padding: 0px;
 	    margin: 1.5em 0em 1.5em 0em;
 	    font-size: 14px;
-	  }
-	  
-	  #menu li {
+	    }
+
+	    #menu li {
 	    float: left;
-    }
-    
-    #menu li.first {
+      }
+
+      #menu li.first {
       width: 227px;
-    }
-    
-    #menu li.first h1 {
+      }
+
+      #menu li.first h1 {
       color: #fff;
       text-shadow: 1px 1px 1px #000;
-    }
-    
-    #menu li a, #menu li.first{
+      }
+
+      #menu li a, #menu li.first{
       display: block;
       padding: 10px;
-	    margin: 0px;	    
+	    margin: 0px;
 	    background: -webkit-gradient(linear, left top, left bottom, from(#cacaca), to(#848484));
 	    background: -moz-linear-gradient(top,  #cacaca,  #848484);
 	    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cacaca', endColorstr='#848484');
       color: #000;
       text-decoration: none;
       text-shadow: 1px 1px 1px #fff;
-    }
-    
-    #menu li a:hover, #menu li a.selected {
+      }
+
+      #menu li a:hover, #menu li a.selected {
 	    background: -webkit-gradient(linear, left top, left bottom, from(#929292), to(#535353));
 	    background: -moz-linear-gradient(top,  #929292,  #535353);
 	    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#929292', endColorstr='#535353');
 	    color: #fff;
 	    text-shadow: -1px -1px -1px #000;
-    }
-    
-    #menu li.first {
+      }
+
+      #menu li.first {
       -webkit-border-top-left-radius: 5px;
 	    -webkit-border-bottom-left-radius: 5px;
 	    -moz-border-radius-topleft: 5px;
 	    -moz-border-radius-bottomleft: 5px;
-    }
-    #menu li.last a{
+      }
+      #menu li.last a{
       -webkit-border-top-right-radius: 5px;
       -webkit-border-bottom-right-radius: 5px;
       -moz-border-radius-bottomright: 5px;
       -moz-border-radius-topright: 5px;
-    }
-    
-    .clearfix {
+      }
+
+      .clearfix {
       display:block;
       clear:both;
-    }
-    
-	</style>
-	<script src="jquery-1.4.2.min.js" type="text/javascript" charset="utf-8"></script>
-	<script type="text/javascript" charset="utf-8">
-	 $('document').ready(function() {
-	   $('#processors, #about, #contributors, #docs').hide();
-	   
-	   $('#menu li a').bind('click',function() {
-       var that = $(this);
-       $('.selected').removeClass('selected');
-       that.addClass('selected');
-       var uid = that.attr('href');
-       
-       var div = $(uid);
-       $('#content div:visible').hide(0,function() {
-         $(uid).show(0);
-       });
-       return false;
-	   });
-	 });
-	</script>
-	<script type="text/javascript">
+      }
 
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-13155106-4']);
-    _gaq.push(['_trackPageview']);
+	  </style>
+	  <script src="jquery-1.4.2.min.js" type="text/javascript" charset="utf-8"></script>
+	  <script type="text/javascript" charset="utf-8">
+	    $('document').ready(function() {
+	    $('#processors, #about, #contributors, #docs').hide();
 
-    (function() {
+	    $('#menu li a').bind('click',function() {
+      var that = $(this);
+      $('.selected').removeClass('selected');
+      that.addClass('selected');
+      var uid = that.attr('href');
+
+      var div = $(uid);
+      $('#content div:visible').hide(0,function() {
+      $(uid).show(0);
+      });
+      return false;
+	    });
+	    });
+	  </script>
+	  <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-13155106-4']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
+      })();
 
-  </script>
-</head>
-<body>
-  
-  <div id="container">    
-    <ul id="menu">
-      <li class="first"><h1>Lifty</h1></li>
-      <li><a class="selected" href="#news">News</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#processors">Processors</a></li>
-      <li><a href="#docs">Docs</a>
-      <li class="last"><a href="#contributors">Contributors</a></li>
-      <div class="clearfix"></div>
-    </ul>
-    <div id="content">
-      <div id="news">
-		<h2>Lifty 1.6 is out <span class="date">11th of March 2011</span></h2>
-		<p>Lifty 1.6 has just been published. This version includes the following:</p>
-		<ul>	
-			<li>Works on Windows!</li>
-			<li>Templates have been updated to use Scala 2.8.1 and Lift 2.2</li>
-		</ul>
-        <h2>Announcing Lifty <span class="date">9th of August 2010</span></h2>
-        <p>Approximately 3 months ago I was selected as a Google Summer of Code student for the organization 
-           École Polytechnique Fédérale de Lausanne (EPFL). I was lucky enough to get two mentors, David Pollak 
-           and Timothy Perrett. We've been hard at work on the project since and now three months later we finally 
-           have something to show for it. Say hello to Lifty.</p>
+    </script>
+  </head>
+  <body>
 
-        <p>Lifty adds scaffolding to sbt (Simple Build Tool) and includes templates for Lift including 
-           new projects, adding snippets, models, comet actors, and other templates for Lift-base projects.</p>
+    <div id="container">
+      <ul id="menu">
+        <li class="first"><h1>Lifty</h1></li>
+        <li><a class="selected" href="#news">News</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#processors">Processors</a></li>
+        <li><a href="#docs">Docs</a>
+        <li class="last"><a href="#contributors">Contributors</a></li>
+        <div class="clearfix"></div>
+      </ul>
+      <div id="content">
+        <div id="news">
 
-        <p>Lifty consists of two parts, Lifty-engine and Lifty. </p>
+          <h2>Lifty 1.6.1 is out <span class="date">20th of March 2011</span></h2>
+          <p>Lifty 1.6.1 has just been published. This version includes the following:</p>
+          <ul>
+            <li>Can handle paths that contain spaces in them</li>
+            <li>Templates have been polished by Timothy Perrett and updated to use Lifty 2.3-RC3</li>
+          </ul>
+		      <h2>Lifty 1.6 is out <span class="date">11th of March 2011</span></h2>
+		      <p>Lifty 1.6 has just been published. This version includes the following:</p>
+		      <ul>
+			      <li>Works on Windows!</li>
+			      <li>Templates have been updated to use Scala 2.8.1 and Lift 2.2</li>
+		      </ul>
+          <h2>Announcing Lifty <span class="date">9th of August 2010</span></h2>
+          <p>Approximately 3 months ago I was selected as a Google Summer of Code student for the organization
+            École Polytechnique Fédérale de Lausanne (EPFL). I was lucky enough to get two mentors, David Pollak
+            and Timothy Perrett. We've been hard at work on the project since and now three months later we finally
+            have something to show for it. Say hello to Lifty.</p>
 
-        <h3>Lifty-engine</h3>
-        <p>Is a framework that helps you develop SBT processors which generate source files. All you have to do is 
-           mix in a simple trait, implement at least one Template and you're done. </p>
+          <p>Lifty adds scaffolding to sbt (Simple Build Tool) and includes templates for Lift including
+            new projects, adding snippets, models, comet actors, and other templates for Lift-base projects.</p>
 
-        <p>Modularity has been a hight priority for us and Lifty-engine has some cool ways to construct templates. 
-           Templates can depend on other templates and inject code into templates before being processed by Scalate. </p>
+          <p>Lifty consists of two parts, Lifty-engine and Lifty. </p>
 
-        <p>If you're interested in more information or if you want to try it out this guide will take you through the 
-           process of creating your first SBT processor using Lifty-enine 
-           <a href="http://lifty.github.com/Lifty-engine/#your_first_processor" target="_blank">here</a></p>
+          <h3>Lifty-engine</h3>
+          <p>Is a framework that helps you develop SBT processors which generate source files. All you have to do is
+            mix in a simple trait, implement at least one Template and you're done. </p>
 
-        <h3>Lifty</h3>
+          <p>Modularity has been a hight priority for us and Lifty-engine has some cool ways to construct templates.
+            Templates can depend on other templates and inject code into templates before being processed by Scalate. </p>
 
-        <p>This is a SBT processor for generating files associated with the Lift framework. It lets you get started 
-           with Lift in less than a minute - depending on your internet connection ;) and helps you be more 
-           productive in your daily Lift activities.</p>
+          <p>If you're interested in more information or if you want to try it out this guide will take you through the
+            process of creating your first SBT processor using Lifty-enine
+            <a href="http://lifty.github.com/Lifty-engine/#your_first_processor" target="_blank">here</a></p>
 
-        <p>Currently it has declared the following templates: </p>
-        <ul>
-          <li>Snippet: A snippet</li>
-          <li>Mapper: Model class using Mapper</li>
-          <li>Comet: Comet component</li>
-          <li>Layout: An empty layout with a surround tag</li>
-          <li>Project: A Lift project with some functionality to get you started</li>
-          <li>Project-blank: A blank Lift project that uses SBT as it's build system</li>
-          <li>User: Model class implemented using Mapper. It provides basic functionality that would 
+          <h3>Lifty</h3>
+
+          <p>This is a SBT processor for generating files associated with the Lift framework. It lets you get started
+            with Lift in less than a minute - depending on your internet connection ;) and helps you be more
+            productive in your daily Lift activities.</p>
+
+          <p>Currently it has declared the following templates: </p>
+          <ul>
+            <li>Snippet: A snippet</li>
+            <li>Mapper: Model class using Mapper</li>
+            <li>Comet: Comet component</li>
+            <li>Layout: An empty layout with a surround tag</li>
+            <li>Project: A Lift project with some functionality to get you started</li>
+            <li>Project-blank: A blank Lift project that uses SBT as it's build system</li>
+            <li>User: Model class implemented using Mapper. It provides basic functionality that would
               expect from a User</li>
-        </ul>
-        <p>It has been built using Lifty-engine of course.</p>
+          </ul>
+          <p>It has been built using Lifty-engine of course.</p>
 
-        <p>For more information about the processor check out <a href="http://github.com/Lifty/Lifty" target="_blank">http://github.com/Lifty/Lifty</a></p>
+          <p>For more information about the processor check out <a href="http://github.com/Lifty/Lifty" target="_blank">http://github.com/Lifty/Lifty</a></p>
 
-        <p>
-          <strong>Site</strong>: <a href="http://lifty.github.com/" target="_blank">http://lifty.github.com/</a> <br />
-          <strong>Google Group</strong>: <a href="http://groups.google.com/group/lifty" target="_blank">http://groups.google.com/group/lifty</a> <br />
-          <strong>Github org</strong>: <a href="http://github.com/Lifty" target="_blank">http://github.com/Lifty</a> <br />
-        </p>
-
-        <p><em>Thanks for taking the time to read this mail,<br />
-        Mads Hartmann</em></p>
-    </div>
-  
-    <div id="processors">
-      <p>The following is a list of all the known processors developed using Lifty-engine. If you have used Lifty, please send an email to lifty.organization at gmail dot com</p>
-      <ul>
-        <li>
-          <strong>Lifty</strong>
-          <p>Lifty generates files associated with the Lift framework. It lets you get started with Lift in less than a minute - depending on your internet connection ;) and helps you be more productive in your daily Lift activities.</p>
-          <p><strong>Site: </strong><a href="http://lifty.github.com/Lifty/" target="_blank">http://lifty.github.com/Lifty/</a> <br><strong>Developer:</strong> Mads Hartmann</p>
-        </li>
-      </ul>
-    </div>
-    
-    <div id="about">
-      <p>Lifty adds scaffolding to sbt (Simple Build Tool) and includes templates for Lift including 
-         new projects, adding snippets, models, comet actors, and other templates for Lift-base projects.</p>
-         
-      <p>Lifty is only built against Scala 2.7.7 (because it depends on sbt) and is published to the <a href="http://www.scala-tools.org" target="_blank">scala-tools</a> repository with the organization-id "org.lifty". The source code is available on <a href="http://www.github.com/lifty" target="_blank">Github</a>.</p>
-        
-      <p>Lifty consists of two parts, Lifty-engine and Lifty. </p>
-
-      <h3>Lifty-engine</h3>
-      <p>Is a framework that helps you develop SBT processors which generate source files. All you have to do is 
-         mix in a simple trait, implement at least one Template and you're done. </p>
-
-      <p>Modularity has been a hight priority for us and Lifty-engine has some cool ways to construct templates. 
-         Templates can depend on other templates and inject code into templates before being processed by Scalate. </p>
-
-      <p>If you're interested in more information or if you want to try it out this guide will take you through the 
-         process of creating your first SBT processor using Lifty-enine 
-         <a href="http://lifty.github.com/Lifty-engine/#your_first_processor" target="_blank">here</a></p>
-
-      <h3>Lifty</h3>
-
-      <p>This is a SBT processor for generating files associated with the Lift framework. It lets you get started 
-         with Lift in less than a minute - depending on your internet connection ;) and helps you be more 
-         productive in your daily Lift activities.</p>
-
-      <p>Currently it has declared the following templates: </p>
-      <ul>
-        <li>Snippet: A snippet</li>
-        <li>Mapper: Model class using Mapper</li>
-        <li>Comet: Comet component</li>
-        <li>Layout: An empty layout with a surround tag</li>
-        <li>Project: A Lift project with some functionality to get you started</li>
-        <li>Project-blank: A blank Lift project that uses SBT as it's build system</li>
-        <li>User: Model class implemented using Mapper. It provides basic functionality that would 
-            expect from a User</li>
-      </ul>
-      <p>It has been built using Lifty-engine of course.</p>
-      <hr />
-      <p>
-        <strong>Site</strong>: <a href="http://lifty.github.com/" target="_blank">http://lifty.github.com/</a> <br />
-        <strong>Google Group</strong>: <a href="http://groups.google.com/group/lifty" target="_blank">http://groups.google.com/group/lifty</a> <br />
-        <strong>Github org</strong>: <a href="http://github.com/Lifty" target="_blank">http://github.com/Lifty</a> <br />
-      </p>
-      
-    </div>
-  
-    <div id="docs">
-      <p>The following is a list of the documentation that's currently available for Lifty</p>
-      <ul>
-        <li><a href="http://lifty.github.com/Lifty-engine/#your_first_processor" target="_blank">Writing your first processor using Lifty</a></li>
-        <li><a href="api/index.html">API documentation</a></li>
-      </ul>
-    </div>
-  
-    <div id="contributors">
-      <p>The following is a list of the people who have contributed code to Lifty</p>
-      <ul>
-        <li>
-          <strong>Mads Hartmann Jensen</strong>
           <p>
-            Twitter: <a href="http://www.twitter.com/Mads_Hartmann" target="_blank">Mads_Hartmann</a> <br />
-            Github: <a href="http://github.com/mads379" target="_blank">mads379</a>
+            <strong>Site</strong>: <a href="http://lifty.github.com/" target="_blank">http://lifty.github.com/</a> <br />
+            <strong>Google Group</strong>: <a href="http://groups.google.com/group/lifty" target="_blank">http://groups.google.com/group/lifty</a> <br />
+            <strong>Github org</strong>: <a href="http://github.com/Lifty" target="_blank">http://github.com/Lifty</a> <br />
           </p>
-        </li>
-      </ul>
-    </div>
-  </div>
-  </div>
-  
 
-</body>
+          <p><em>Thanks for taking the time to read this mail,<br />
+              Mads Hartmann</em></p>
+        </div>
+
+        <div id="processors">
+          <p>The following is a list of all the known processors developed using Lifty-engine. If you have used Lifty, please send an email to lifty.organization at gmail dot com</p>
+          <ul>
+            <li>
+              <strong>Lifty</strong>
+              <p>Lifty generates files associated with the Lift framework. It lets you get started with Lift in less than a minute - depending on your internet connection ;) and helps you be more productive in your daily Lift activities.</p>
+              <p><strong>Site: </strong><a href="http://lifty.github.com/Lifty/" target="_blank">http://lifty.github.com/Lifty/</a> <br><strong>Developer:</strong> Mads Hartmann</p>
+            </li>
+          </ul>
+        </div>
+
+        <div id="about">
+          <p>Lifty adds scaffolding to sbt (Simple Build Tool) and includes templates for Lift including
+            new projects, adding snippets, models, comet actors, and other templates for Lift-base projects.</p>
+
+          <p>Lifty is only built against Scala 2.7.7 (because it depends on sbt) and is published to the <a href="http://www.scala-tools.org" target="_blank">scala-tools</a> repository with the organization-id "org.lifty". The source code is available on <a href="http://www.github.com/lifty" target="_blank">Github</a>.</p>
+
+          <p>Lifty consists of two parts, Lifty-engine and Lifty. </p>
+
+          <h3>Lifty-engine</h3>
+          <p>Is a framework that helps you develop SBT processors which generate source files. All you have to do is
+            mix in a simple trait, implement at least one Template and you're done. </p>
+
+          <p>Modularity has been a hight priority for us and Lifty-engine has some cool ways to construct templates.
+            Templates can depend on other templates and inject code into templates before being processed by Scalate. </p>
+
+          <p>If you're interested in more information or if you want to try it out this guide will take you through the
+            process of creating your first SBT processor using Lifty-enine
+            <a href="http://lifty.github.com/Lifty-engine/#your_first_processor" target="_blank">here</a></p>
+
+          <h3>Lifty</h3>
+
+          <p>This is a SBT processor for generating files associated with the Lift framework. It lets you get started
+            with Lift in less than a minute - depending on your internet connection ;) and helps you be more
+            productive in your daily Lift activities.</p>
+
+          <p>Currently it has declared the following templates: </p>
+          <ul>
+            <li>Snippet: A snippet</li>
+            <li>Mapper: Model class using Mapper</li>
+            <li>Comet: Comet component</li>
+            <li>Layout: An empty layout with a surround tag</li>
+            <li>Project: A Lift project with some functionality to get you started</li>
+            <li>Project-blank: A blank Lift project that uses SBT as it's build system</li>
+            <li>User: Model class implemented using Mapper. It provides basic functionality that would
+              expect from a User</li>
+          </ul>
+          <p>It has been built using Lifty-engine of course.</p>
+          <hr />
+          <p>
+            <strong>Site</strong>: <a href="http://lifty.github.com/" target="_blank">http://lifty.github.com/</a> <br />
+            <strong>Google Group</strong>: <a href="http://groups.google.com/group/lifty" target="_blank">http://groups.google.com/group/lifty</a> <br />
+            <strong>Github org</strong>: <a href="http://github.com/Lifty" target="_blank">http://github.com/Lifty</a> <br />
+          </p>
+
+        </div>
+
+        <div id="docs">
+          <p>The following is a list of the documentation that's currently available for Lifty</p>
+          <ul>
+            <li><a href="http://lifty.github.com/Lifty-engine/#your_first_processor" target="_blank">Writing your first processor using Lifty</a></li>
+            <li><a href="api/index.html">API documentation</a></li>
+          </ul>
+        </div>
+
+        <div id="contributors">
+          <p>The following is a list of the people who have contributed code to Lifty</p>
+          <ul>
+            <li>
+              <strong>Mads Hartmann Jensen</strong>
+              <p>
+                Twitter: <a href="http://www.twitter.com/Mads_Hartmann" target="_blank">Mads_Hartmann</a> <br />
+                Github: <a href="http://github.com/mads379" target="_blank">mads379</a>
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+  </body>
 </html>
