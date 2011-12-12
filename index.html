@@ -58,7 +58,7 @@
       }
 
       #menu li.first {
-      width: 299px;
+      width: 212px;
       }
 
       #menu li.first h1 {
@@ -144,6 +144,7 @@
       <ul id="menu">
         <li class="first"><h1>Lifty</h1></li>
         <li><a class="selected" href="#news">News</a></li>
+        <li><a href="#installation">installation</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#processors">Recipes</a></li>
         <li class="last"><a href="#contributors">Contributors</a></li>
@@ -151,6 +152,30 @@
       </ul>
       <div id="content">
         <div id="news">
+            <h2>Lifty 1.7.4 is out <span class="date">12th of December 2011</span></h2> 
+            <p>
+                <strong>Notice</strong>: You will have to re-install the lift recipe because I changed
+                to JSON description and it's no longer able to parse the old file. Sorry.
+                
+                To use the new version change your ~/.sbt/plugins/build.sbt so it has 
+                <pre>addSbtPlugin("org.lifty" % "lifty" % "1.7.4")</pre> and then start an SBT session
+                and run <pre style="margin-bottom:0px;">lifty delete lift
+lifty learn lift https://raw.github.com/Lifty/lifty/master/lifty-recipe/lifty.json
+                </pre>                
+                <p style="margin-top:0px;"><strong>Changes</strong></p>
+                <ul>
+                    <li>Added tab-completion (awesome!)</li>
+                    <li>No longer use Scalate for template rendering for the following reasons
+                        <ul>
+                            <li>Less dependencies</li>
+                            <li>Avoid the extra compilation step</li>
+                            <li>Hardly used any of its features</li>
+                        </ul>
+                    </li>
+                    <li>Template rendering is now done in parallel</li>
+                    <li>Downloading of templates are done in parallel</li>
+                </ul>
+            </p>
             <h2>Lifty 1.7.3 is out <span class="date">24th of November 2011</span></h2> 
             <p>Bug fix for windows users</p>
             <h2>Lifty 1.7.2 is out <span class="date">17th of November 2011</span></h2>
@@ -224,7 +249,27 @@
           <p><em>Thanks for taking the time to read this mail,<br />
               Mads Hartmann</em></p>
         </div>
+        <div id="installation">
+            <h2>Simply follow these steps</h2>
 
+            <ul>
+            <li>Install SBT 0.11.2 (or any in the 0.11.x series)</li>
+            <li>Create a global plugin .sbt file: ~/.sbt/plugins/build.sbt</li>
+            <li>Add the following to that file: addSbtPlugin("org.lifty" % "lifty" % "1.7.4")</li>
+            </ul>
+            
+            <p>Now you have lifty installed. Now teach lifty about new recipes. The 'recipes' tab has a list of all known recipes. Below is an example of how to install and use the lift recipe.:</p>
+            
+            <ul>
+                <li>Create a new SBT project</li>
+                <li>In the SBT console
+<pre>> lifty learn lift https://raw.github.com/Lifty/lifty/master/lifty-recipe/lifty.json
+> lifty create lift project
+> reload
+> container:start
+> container:stop</pre>
+                </li>
+        </div>
         <div id="processors">
           <p>This a list of known recipes for Lifty</p>
           <ul>
