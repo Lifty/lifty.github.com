@@ -9,120 +9,133 @@
 	  <meta name="author" content="Mads Hartmann Jensen">
 	  <!-- Date: 2010-08-06 -->
 	  <style type="text/css" media="screen">
-  	  body {
-	    font-size: 14px;
-	    font-family: Helvetica;
-	    color: #444;
-  	  }
-  	  a {
-  	  color: #000;
-  	  outline: none;
-  	  }
-	    #container {
-	    width: 600px;
-	    margin: 0px auto;
-	    }
-	    #content {
-	    padding: 0px 20px;
-      text-align:justify;
-	    }
-	    h1 {
-	    display: inline;
-	    font-size: 1em;
-	    margin: 0px;
-	    padding: 0px;
-	    }
-	    h2 {
-      clear: left;
+      body {
+          font-size: 14px;
+          font-family: Helvetica;
+          color: #444;
+      }
+      
+      pre {
+          background: #444;
+          color: #fff;
+          padding: 5px;
+          font-size: 11px;
+          overflow-x: scroll;
+      }
+      
+      a {
+          color: #000;
+          outline: none;
+      }
+      #container {
+          width: 600px;
+          margin: 0px auto;
+      }
+      #content {
+          padding: 0px 20px;
+          text-align: justify;
+      }
+      h1 {
+          display: inline;
+          font-size: 1em;
+          margin: 0px;
+          padding: 0px;
+      }
+      h2 {
+          clear: left;
       }
       span.date {
-      font-size: 12px;
-      color: #cecece;
+          font-size: 12px;
+          color: #cecece;
       }
       h3 {
-      padding-bottom: 0px;
-      margin-bottom: 0px;
+          padding-bottom: 0px;
+          margin-bottom: 0px;
       }
       p {
-      margin-top: 5px;
+          margin-top: 5px;
       }
-	    #menu {
-	    list-style: none;
-	    padding: 0px;
-	    margin: 1.5em 0em 1.5em 0em;
-	    font-size: 14px;
-	    }
+      #menu {
+          list-style: none;
+          padding: 0px;
+          margin: 1.5em 0em 1.5em 0em;
+          font-size: 14px;
+      }
 
-	    #menu li {
-	    float: left;
+      #menu li {
+          float: left;
       }
 
       #menu li.first {
-      width: 212px;
+          width: 212px;
       }
 
       #menu li.first h1 {
-      color: #fff;
-      text-shadow: 1px 1px 1px #000;
+          color: #fff;
+          text-shadow: 1px 1px 1px #000;
       }
 
-      #menu li a, #menu li.first{
-      display: block;
-      padding: 10px;
-	    margin: 0px;
-	    background: -webkit-gradient(linear, left top, left bottom, from(#cacaca), to(#848484));
-	    background: -moz-linear-gradient(top,  #cacaca,  #848484);
-	    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cacaca', endColorstr='#848484');
-      color: #000;
-      text-decoration: none;
-      text-shadow: 1px 1px 1px #fff;
+      #menu li a, #menu li.first {
+          display: block;
+          padding: 10px;
+          margin: 0px;
+          background: -webkit-gradient(linear, left top, left bottom, from(#cacaca), to(#848484));
+          background: -moz-linear-gradient(top, #cacaca, #848484);
+          filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cacaca', endColorstr='#848484');
+          color: #000;
+          text-decoration: none;
+          text-shadow: 1px 1px 1px #fff;
       }
 
       #menu li a:hover, #menu li a.selected {
-	    background: -webkit-gradient(linear, left top, left bottom, from(#929292), to(#535353));
-	    background: -moz-linear-gradient(top,  #929292,  #535353);
-	    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#929292', endColorstr='#535353');
-	    color: #fff;
-	    text-shadow: -1px -1px -1px #000;
+          background: -webkit-gradient(linear, left top, left bottom, from(#929292), to(#535353));
+          background: -moz-linear-gradient(top, #929292, #535353);
+          filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#929292', endColorstr='#535353');
+          color: #fff;
+          text-shadow: -1px -1px -1px #000;
       }
 
       #menu li.first {
-      -webkit-border-top-left-radius: 5px;
-	    -webkit-border-bottom-left-radius: 5px;
-	    -moz-border-radius-topleft: 5px;
-	    -moz-border-radius-bottomleft: 5px;
+          -webkit-border-top-left-radius: 5px;
+          -webkit-border-bottom-left-radius: 5px;
+          -moz-border-radius-topleft: 5px;
+          -moz-border-radius-bottomleft: 5px;
       }
-      #menu li.last a{
-      -webkit-border-top-right-radius: 5px;
-      -webkit-border-bottom-right-radius: 5px;
-      -moz-border-radius-bottomright: 5px;
-      -moz-border-radius-topright: 5px;
+      #menu li.last a {
+          -webkit-border-top-right-radius: 5px;
+          -webkit-border-bottom-right-radius: 5px;
+          -moz-border-radius-bottomright: 5px;
+          -moz-border-radius-topright: 5px;
       }
 
       .clearfix {
-      display:block;
-      clear:both;
+          display: block;
+          clear: both;
       }
+
 
 	  </style>
 	  <script src="jquery-1.4.2.min.js" type="text/javascript" charset="utf-8"></script>
 	  <script type="text/javascript" charset="utf-8">
+	    
 	    $('document').ready(function() {
-	    $('#processors, #about, #contributors').hide();
+	        $('#processors, #about, #contributors, #installation').hide();
 
-	    $('#menu li a').bind('click',function() {
-      var that = $(this);
-      $('.selected').removeClass('selected');
-      that.addClass('selected');
-      var uid = that.attr('href');
+	        $('#menu li a').bind('click',function() {
+                var that = $(this);
+                $('.selected').removeClass('selected');
+                that.addClass('selected');
+                var uid = that.attr('href');
 
-      var div = $(uid);
-      $('#content div:visible').hide(0,function() {
-      $(uid).show(0);
-      });
-      return false;
+                var div = $(uid);
+                
+                $('#content div:visible').hide(0,function() {
+                    $(uid).show(0);
+                });
+                return false;
+	        });
 	    });
-	    });
+	    
 	  </script>
 	  <script type="text/javascript">
 
@@ -159,10 +172,9 @@
                 
                 To use the new version change your ~/.sbt/plugins/build.sbt so it has 
                 <pre>addSbtPlugin("org.lifty" % "lifty" % "1.7.4")</pre> and then start an SBT session
-                and run <pre style="margin-bottom:0px;">lifty delete lift
-lifty learn lift https://raw.github.com/Lifty/lifty/master/lifty-recipe/lifty.json
-                </pre>                
-                <p style="margin-top:0px;"><strong>Changes</strong></p>
+                and run <pre>lifty delete lift
+lifty learn lift https://raw.github.com/Lifty/lifty/master/lifty-recipe/lifty.json</pre>                
+                <p><strong>Changes</strong></p>
                 <ul>
                     <li>Added tab-completion (awesome!)</li>
                     <li>No longer use Scalate for template rendering for the following reasons
@@ -175,7 +187,6 @@ lifty learn lift https://raw.github.com/Lifty/lifty/master/lifty-recipe/lifty.js
                     <li>Template rendering is now done in parallel</li>
                     <li>Downloading of templates are done in parallel</li>
                 </ul>
-            </p>
             <h2>Lifty 1.7.3 is out <span class="date">24th of November 2011</span></h2> 
             <p>Bug fix for windows users</p>
             <h2>Lifty 1.7.2 is out <span class="date">17th of November 2011</span></h2>
@@ -250,25 +261,30 @@ lifty learn lift https://raw.github.com/Lifty/lifty/master/lifty-recipe/lifty.js
               Mads Hartmann</em></p>
         </div>
         <div id="installation">
-            <h2>Simply follow these steps</h2>
+            <p>You need to have <a href="https://github.com/harrah/xsbt/">SBT</a> installed (any version of SBT in th 0.11.x series should do)</p>
 
-            <ul>
-            <li>Install SBT 0.11.2 (or any in the 0.11.x series)</li>
-            <li>Create a global plugin .sbt file: ~/.sbt/plugins/build.sbt</li>
-            <li>Add the following to that file: addSbtPlugin("org.lifty" % "lifty" % "1.7.4")</li>
-            </ul>
+            <p>Now, add lifty as a global plugin by adding the following line to your ~/.sbt/plugins/build.sbt file:</p>
+
+            <pre>addSbtPlugin("org.lifty" % "lifty" % "1.7.4")</pre>
+
+            <p>Whenever you're in a SBT session you now have the lifty command avaiable. The lifty command has tab-completion enabled to make it faster/easier to use. Try typing lifty and hit tab in an SBT session.</p>
+
+            <p>Now that you have Lifty installed you need to teach it how to generate different files for you. You do so by pointing lifty to a recipe. The 'recipes' tab above has a list of all currently known recipes.</p>
+
+            <p>Here's what you would have to type to teach Lifty about Lift projects and templates</p>
             
-            <p>Now you have lifty installed. Now teach lifty about new recipes. The 'recipes' tab has a list of all known recipes. Below is an example of how to install and use the lift recipe.:</p>
-            
-            <ul>
-                <li>Create a new SBT project</li>
-                <li>In the SBT console
-<pre>> lifty learn lift https://raw.github.com/Lifty/lifty/master/lifty-recipe/lifty.json
-> lifty create lift project
-> reload
+            <pre>> lifty learn lift https://raw.github.com/Lifty/lifty/master/lifty-recipe/lifty.json</pre>
+                
+            <p>To create a fresh Lift webapp and start it simply type:</p>
+
+<pre>> lifty create lift project
+> reload          
 > container:start
 > container:stop</pre>
-                </li>
+            
+            <p>Now point your browser to http://localhost:8080</p>
+            
+            
         </div>
         <div id="processors">
           <p>This a list of known recipes for Lifty</p>
@@ -281,19 +297,22 @@ lifty learn lift https://raw.github.com/Lifty/lifty/master/lifty-recipe/lifty.js
           </ul>
         </div>
 
-        <div id="about">
-          <p>Lifty is a plugin that adds scaffolding to SBT 0.11.x (Simple Build Tool). It's easy to 
-             teach Lifty about new scaffolding templates, you just have to give it the url to recipe and
-             it will download the templates and you're set. See the example below for how to teach it about
-             Lift related tempaltes</p>
-             
-             <pre>lifty learn lift https://raw.github.com/Lifty/lifty/master/lifty-recipe/lifty.json</pre>
-          <hr />
-          <p>
-            <strong>Site</strong>: <a href="http://lifty.github.com/" target="_blank">http://lifty.github.com/</a> <br />
-            <strong>Google Group</strong>: <a href="http://groups.google.com/group/lifty" target="_blank">http://groups.google.com/group/lifty</a> <br />
-            <strong>Github org</strong>: <a href="http://github.com/Lifty" target="_blank">http://github.com/Lifty</a> <br />
-          </p>
+        <div id="about"> 
+            <p>Lifty is a plugin that adds scaffolding to <a
+        href="https://github.com/harrah/xsbt/">SBT</a> 0.11.x.</p>
+        
+         <p>It's easy to teach Lifty about new scaffolding templates, you just have to
+        give it the url to recipe and it will download the templates and you're set. See
+        the installation tab for more information.</p>
+        
+         <pre>lifty learn lift
+https://raw.github.com/Lifty/lifty/master/lifty-recipe/lifty.json</pre> <hr /> <p>
+        <strong>Site</strong>: <a href="http://lifty.github.com/"
+        target="_blank">http://lifty.github.com/</a> <br /> <strong>Google Group</strong>:
+        <a href="http://groups.google.com/group/lifty"
+        target="_blank">http://groups.google.com/group/lifty</a> <br /> <strong>Github
+        org</strong>: <a href="http://github.com/Lifty"
+        target="_blank">http://github.com/Lifty</a> <br /> </p>
 
         </div>
 
