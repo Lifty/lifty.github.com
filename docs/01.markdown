@@ -1,0 +1,7 @@
+# Installing The Plugin
+
+Add lifty as a global plugin so you can use it in all of your sbt projects. You do so by adding the following line to your `~/.sbt/plugins/build.sbt` file
+
+	addSbtPlugin("org.lifty" % "lifty" % "1.7.4")
+
+Whenever you're in a SBT session you now have the lifty command avaiable. The lifty command has tab-completion enabled to make it faster/easier to use. Try typing lifty and hit tab in an SBT session.

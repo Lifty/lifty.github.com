@@ -1,0 +1,5 @@
+# Lifty
+
+Lifty is a plugin that adds scaffolding to [sbt](href="https://github.com/harrah/xsbt/"). By telling Lifty about Recipes you teach it to generate files. The hope is that the Scala community will create recipes for all the different libraries and frameworks to make it easy to get started and be productive whenever your're working with Scala. 
+
+If you have any questions then drop by the [Google Group]("http://groups.google.com/group/lifty") and if you want to have a look at the implementation or open an issue then go to [Github]("http://github.com/Lifty").

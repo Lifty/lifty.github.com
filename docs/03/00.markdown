@@ -1,0 +1,12 @@
+# Making Your Own Recipe
+
+I have claimed that:
+
+> It's easy to teach Lifty about new scaffolding templates, you just
+> have to give it the url to recipe and it will download the templates
+> and you're set.
+
+To creat your own recipes you have to follow two steps
+
+- Create a .json file that tells Lifty all it needs to know to create your templates
+- Create a set of templates files that you want Lifty to be able to create.

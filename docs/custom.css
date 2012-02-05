@@ -1,0 +1,32 @@
+ul p {
+	margin-bottom: 0px;
+}
+
+p {
+	width: auto;
+}
+
+p + p {
+	margin-top: 0px;
+	text-indent: 0px;
+}
+
+pre {
+	padding: 5px;
+	font-size: 0.8em;
+	overflow-x: scroll;
+}
+
+code {
+	font-size: 0.9em;
+}
+
+li.generated {
+	display: none;
+}
+
+h4 {
+	text-align: center;
+	border-top: solid #000 1px;
+	margin-top: 2.5em;
+}
