@@ -1,0 +1,143 @@
+<html manifest="pamflet.manifest">
+      <head>
+        <title>Lifty — Combined Pages</title>
+        <link type="text/css" media="screen, projection" rel="stylesheet" href="css/blueprint/screen.css"></link>
+        <link type="text/css" media="screen and (min-device-width: 800px), projection" rel="stylesheet" href="css/blueprint/grid.css"></link>
+        <link type="text/css" media="print" rel="stylesheet" href="css/blueprint/print.css"></link> 
+        <!--[if lt IE 8]>
+          <link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection"/>
+        <![endif]-->
+        <link type="text/css" media="screen, projection" rel="stylesheet" href="css/pamflet.css"></link>
+        <link type="text/css" media="print" rel="stylesheet" href="css/pamflet-print.css"></link>
+        <link type="text/css" media="screen and (min-device-width: 800px), projection" rel="stylesheet" href="css/pamflet-grid.css"></link>
+        <link type="text/css" media="screen, projection" rel="stylesheet" href="css/custom.css"></link>
+        <script src="js/jquery-1.6.2.min.js"></script>
+        <script src="js/pamflet.js"></script>
+        
+        <meta charset="utf-8"></meta>
+        <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+      </head>
+      <body>
+        <a class="page prev nav" href="Contents+in+Depth.html">
+            <span class="space">&nbsp;</span>
+            <span class="flip">❧</span>
+          </a>
+        <div class="container">
+          <div class="span-16 prepend-1 append-1">
+            <div class="top nav span-16 title">
+              <span>Lifty</span>
+               — Combined Pages
+            </div>
+          </div>
+          <div class="span-16 prepend-1 append-1 contents">
+            <h4>Contents</h4><div><a href="#Lifty">Lifty</a></div><ol class="toc"> <li><div><a href="#Installing+The+Plugin">Installing The Plugin</a></div></li><li><div><a href="#Teaching+Lifty+Recipes">Teaching Lifty Recipes</a></div></li><li><div><a href="#Making+Your+Own+Recipe">Making Your Own Recipe</a></div><ol class="toc"> <li><div><a href="#Creating+Your+Description+File">Creating Your Description File</a></div></li><li><div><a href="#Creating+Your+Templates">Creating Your Templates</a></div></li> </ol></li><li><div><a href="#Existing+Recipes">Existing Recipes</a></div></li><li><div><a href="#Changelog">Changelog</a></div></li> </ol><h1 id="Lifty">Lifty</h1><p>Lifty is a plugin that adds scaffolding to <a  href="href=&quot;https://github.com/harrah/xsbt/&quot;">sbt</a>. By telling Lifty about Recipes you teach it to generate files. The hope is that the Scala community will create recipes for all the different libraries and frameworks to make it easy to get started and be productive whenever your’re working with Scala. 
+</p><p>If you have any questions then drop by the <a  href="&quot;http://groups.google.com/group/lifty&quot;">Google Group</a> and if you want to have a look at the implementation or open an issue then go to <a  href="&quot;http://github.com/Lifty&quot;">Github</a>.
+</p><h1 id="Installing+The+Plugin">Installing The Plugin</h1><p>Add lifty as a global plugin so you can use it in all of your sbt projects. You do so by adding the following line to your <code>~/.sbt/plugins/build.sbt</code> file
+</p><pre><code>addSbtPlugin(&quot;org.lifty&quot; % &quot;lifty&quot; % &quot;1.7.4&quot;)
+</code></pre><p>Whenever you’re in a SBT session you now have the lifty command avaiable. The lifty command has tab-completion enabled to make it faster/easier to use. Try typing lifty and hit tab in an SBT session.</p><h1 id="Teaching+Lifty+Recipes">Teaching Lifty Recipes</h1><p>Now that you have Lifty installed you need to teach it how to generate different files for you. You do so by pointing lifty to a recipe. Here’s what you would have to type to teach Lifty about Lift projects and templates
+</p><pre><code>&gt; lifty learn lift https://raw.github.com/Lifty/lifty/master/lifty-recipe/lifty.json
+</code></pre><p>This tells <code>lifty</code> that you want to add a new recipe and give it the name <code>lift</code> and that lifty can find the description of the recipe at the given url.
+</p><p>Now you can create a fresh Lift webapp and start it simply by typing the following in an sbt session:
+</p><pre><code>&gt; lifty create lift project
+&gt; reload          
+&gt; container:start
+&gt; container:stop
+</code></pre><p>Now point your browser to <code>http://localhost:8080</code>
+</p><h1 id="Making+Your+Own+Recipe">Making Your Own Recipe</h1><p>I have claimed that:
+</p><blockquote><p>It’s easy to teach Lifty about new scaffolding templates, you just
+have to give it the url to recipe and it will download the templates
+and you’re set.
+</p></blockquote><p>To creat your own recipes you have to follow two steps
+</p><ul><li>Create a .json file that tells Lifty all it needs to know to create your templates
+</li><li>Create a set of templates files that you want Lifty to be able to create.</li></ul><h1 id="Creating+Your+Description+File">Creating Your Description File</h1><p>In this section I’ll describe the .json file you have to write. You can find a detailed example <a  href="https://raw.github.com/Lifty/lifty/master/lifty-recipe/lifty.json">here</a> or check out the case classes that I use to parse the json file <a  href="">here</a>.
+</p><h2 id="Top+level">Top level</h2><p>At the top level you have an object the the properties
+</p><ul><li><strong>origin</strong>: The url of where the .json file is coming from. This is needed so lifty can update recipes by checking if a newer version is available.
+</li><li><strong>version</strong>: The current version of the recipe
+</li><li><strong>sources</strong>: An array of object that describe the source files (i.e. template files)
+</li><li><strong>arguments</strong>: An array of objects defining the arguments that your templates might need. More on this later.
+</li><li><strong>templates</strong>: An array of objects defining the templates that Lifty can create. More on this later.
+</li></ul><p>Example:
+</p><pre><code>{
+	&quot;origin&quot;  : &quot;url of where the recipe is stored&quot;,
+	&quot;version&quot; : 1.3,
+	&quot;sources&quot; : [ ... ],
+	&quot;arguments&quot; : [ ... ],
+	&quot;templates&quot; : [ ... ]
+}
+</code></pre><h2 id="sources">sources</h2><p>As explained, this has to be an array of objects. Each object needs to have the following properties:
+</p><ul><li><strong>name</strong>: The name you want the template source file to have once downloaded.
+</li><li><strong>url</strong>: The url of the templates. Lifty uses this to download the template file.
+</li></ul><h2 id="arguments">arguments</h2><p>As explained, this has to be an array of objects. Each object needs to have the following properties:
+</p><ul><li><strong>name</strong>: The name of the argument. This has to be unique.
+</li><li><strong>descriptiveName</strong>: Some descriptive name of the argument. This is used when Lifty needs to query the user about a value for the argument.
+</li><li><strong>default</strong>[Optional]: If you want to provide a default value then you can do it here. This string can use the value of other arguments by using this syntax ”${mainpack}.application”. Here the value of the argument with name mainpack would be substituted for ${mainpack}
+</li></ul><h2 id="templates">templates</h2><p>As explained, this has to be an array of objects. Each object represents something that Lifty can create. Each template can render many source templates if needed (i.e. if you wanted to create an entire project for example). Each object needs to have the following properties:
+</p><ul><li><strong>name</strong>: The name of the template, this has to be unique.
+</li><li><strong>description</strong>: Some description of the things that will created by this template. This will be used when invoking <code>lifty yourRecipe templates</code>
+</li><li><strong>notice</strong>[Optional]: Some message that you want to show the user after the template has been processed. Might be some information explaining how the user should proceed.
+</li><li><strong>folders</strong>[Optional]: an array of strings of any folders that you want to create. Use unix style paths (Lifty will translate them to windows paths if needed).
+</li><li><strong>arguments</strong>: A list of string. The strings should be the names of the arguments that this template needs. Place the arguments in the order you want to query for them. The order is important if some of the arguments depends on any of the others.
+</li><li><strong>files</strong>: A list of objects. The objects needs to have the properties <strong>file</strong> and <strong>destination</strong> where file is the name of the template (the name you gave it in the sources list) and destination is a path that tells lifty where to place the generated file. The destination can also use the ${..} syntax to use argument values.
+</li><li><strong>injections</strong>[Optional]: A list of objects with the properties: file, into, point. file is the name of the source file you want to inject into some other source file. into is the name of the source file you want to inject into. point is the injection point in that file. More about those in the <code>creating your templates</code> section.
+</li><li><strong>dependencies</strong>[Optional]: A list of other templates that this template depends on, that is, this template wants that template to be processed before this one and potentially inject something into the source files.</li></ul><h1 id="Creating+Your+Templates">Creating Your Templates</h1><p>Templates are just plain text files with <code>.ssp</code> extensions. You have to use the <code>.ssp</code> extension for legacy reasons right now. Templates are quite simple, you can define 
+placeholders for argument values that will be substituted when the template is rendered and you can define injection points. The injection points are places in the template
+where other templates might want to inject something when the template is rendered.
+</p><p>Here’s a very simple example showing placeholder values (the ones in ${x} where x is the name of the argument it’s a placeholder for): 
+</p><pre><code>package ${snippetpack}
+
+import scala.xml.{NodeSeq}
+import net.liftweb.util.Helpers._
+
+class ${snippetName} {
+  def render = &quot;*&quot; #&gt; &lt;strong&gt;hello world!&lt;/strong&gt;
+}
+</code></pre><p>and here’s an example using injection points, the syntax is //#inject point: nameOfInjectionPoint: 
+</p><pre><code>name := &quot;${projectName}&quot;
+
+scalaVersion := &quot;${scalaVersion}&quot;
+
+libraryDependencies += &quot;net.liftweb&quot; %% &quot;lift-webkit&quot; % &quot;${liftversion}&quot; % &quot;compile-&gt;default&quot;
+
+//#inject point: dependencies
+
+resolvers += &quot;Java.net Maven2 Repository&quot; at &quot;http://download.java.net/maven/2/&quot;
+
+seq(webSettings :_*)
+
+libraryDependencies += &quot;org.mortbay.jetty&quot; % &quot;jetty&quot; % &quot;6.1.22&quot; % &quot;test,container&quot;
+
+libraryDependencies += &quot;org.scala-tools.testing&quot; %% &quot;specs&quot; % &quot;1.6.9&quot; % &quot;test&quot;
+</code></pre><h1 id="Existing+Recipes">Existing Recipes</h1><p>This a list of known recipes for Lifty
+</p><h2 id="Lifty">Lifty</h2><p>Lifty generates files associated with the Lift framework. It lets you get started with Lift in less than a minute - depending on your internet connection ;) and helps you be more productive in your daily Lift activities.    
+</p><ul><li><strong>url</strong>: https://raw.github.com/Lifty/lifty/master/lifty-recipe/lifty.json
+</li><li><strong>Developer</strong>: Mads Hartmann
+</li></ul><h1 id="Changelog">Changelog</h1><h2 id="Lifty+1.7.4+is+out+-+12th+of+December+2011">Lifty 1.7.4 is out - 12th of December 2011</h2><p><strong>Notice</strong> You will have to re-install the lift recipe because I changed to JSON description and it’s no longer able to parse the old file. Sorry.
+</p><p>To use the new version change your ~/.sbt/plugins/build.sbt so it has 
+</p><pre><code>&gt; addSbtPlugin(&quot;org.lifty&quot; % &quot;lifty&quot; % &quot;1.7.4&quot;)
+</code></pre><p>and then start an SBT session and run 
+</p><pre><code>&gt; lifty delete lift
+&gt; lifty learn lift https://raw.github.com/Lifty/lifty/master/lifty-recipe/lifty.json
+</code></pre><p><strong>Changes</strong>
+</p><ul><li>Added tab-completion (awesome!)
+</li><li><p>No longer use Scalate for template rendering for the following reasons
+</p><ul><li>Less dependencies
+</li><li>Avoid the extra compilation step
+</li><li>Hardly used any of its features
+</li></ul></li><li>Template rendering is now done in parallel
+</li><li>Downloading of templates are done in parallel
+</li></ul><h2 id="Lifty+1.7.3+is+out+-+24th+of+November+2011">Lifty 1.7.3 is out - 24th of November 2011</h2><p>Bug fix for windows users
+</p><h2 id="Lifty+1.7.2+is+out+-+17th+of+November+2011">Lifty 1.7.2 is out - 17th of November 2011</h2><p>Bug fix
+</p><h2 id="Lifty+1.7.1+is+out+-+16th+of+November+2011">Lifty 1.7.1 is out - 16th of November 2011</h2><p>Bug fixes
+</p><h2 id="Lifty+1.7+is+out+-+16th+of+November+2011">Lifty 1.7 is out - 16th of November 2011</h2><p>This has a been a big rewrite of Lifty. It’s now works with SBT 0.11.x and templates/descriptions are hosted online so it’s easier for the community to help maintain the templates
+</p><h2 id="Lifty+1.6.1+is+out+-+20th+of+March+2011">Lifty 1.6.1 is out - 20th of March 2011</h2><p>Lifty 1.6.1 has just been published. This version includes the following:
+</p><ul><li>Can handle paths that contain spaces in them
+</li><li>Templates have been polished by Timothy Perrett and updated to use Lifty 2.3-RC3
+</li></ul><h2 id="Lifty+1.6+is+out+-+11th+of+March+2011">Lifty 1.6 is out - 11th of March 2011</h2><p>Lifty 1.6 has just been published. This version includes the following
+</p><ul><li>Works on Windows!
+</li><li>Templates have been updated to use Scala 2.8.1 and Lift 2.2
+</li></ul><h2 id="Announcing+Lifty+-+9th+of+August+2010">Announcing Lifty - 9th of August 2010</h2><p>Initial release</p>
+          </div>
+        </div>
+        <a class="fork nav" href="http://github.com/Lifty/lifty.github.com"><img alt="Fork me on GitHub" src="img/fork.png"></img></a>
+      </body>
+    </html>

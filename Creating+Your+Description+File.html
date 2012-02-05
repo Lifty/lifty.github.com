@@ -1,0 +1,71 @@
+<html manifest="pamflet.manifest">
+      <head>
+        <title>Lifty — Creating Your Description File</title>
+        <link type="text/css" media="screen, projection" rel="stylesheet" href="css/blueprint/screen.css"></link>
+        <link type="text/css" media="screen and (min-device-width: 800px), projection" rel="stylesheet" href="css/blueprint/grid.css"></link>
+        <link type="text/css" media="print" rel="stylesheet" href="css/blueprint/print.css"></link> 
+        <!--[if lt IE 8]>
+          <link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection"/>
+        <![endif]-->
+        <link type="text/css" media="screen, projection" rel="stylesheet" href="css/pamflet.css"></link>
+        <link type="text/css" media="print" rel="stylesheet" href="css/pamflet-print.css"></link>
+        <link type="text/css" media="screen and (min-device-width: 800px), projection" rel="stylesheet" href="css/pamflet-grid.css"></link>
+        <link type="text/css" media="screen, projection" rel="stylesheet" href="css/custom.css"></link>
+        <script src="js/jquery-1.6.2.min.js"></script>
+        <script src="js/pamflet.js"></script>
+        
+        <meta charset="utf-8"></meta>
+        <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+      </head>
+      <body>
+        <a class="page prev nav" href="Making+Your+Own+Recipe.html">
+            <span class="space">&nbsp;</span>
+            <span class="flip">❧</span>
+          </a><a class="page next nav" href="Creating+Your+Templates.html">
+            <span class="space">&nbsp;</span>
+            <span>❧</span>
+          </a>
+        <div class="container">
+          <div class="span-16 prepend-1 append-1">
+            <div class="top nav span-16 title">
+              <span>Lifty</span>
+               — Creating Your Description File
+            </div>
+          </div>
+          <div class="span-16 prepend-1 append-1 contents">
+            <h1 id="Creating+Your+Description+File">Creating Your Description File</h1><p>In this section I’ll describe the .json file you have to write. You can find a detailed example <a  href="https://raw.github.com/Lifty/lifty/master/lifty-recipe/lifty.json">here</a> or check out the case classes that I use to parse the json file <a  href="">here</a>.
+</p><h2 id="Top+level">Top level</h2><p>At the top level you have an object the the properties
+</p><ul><li><strong>origin</strong>: The url of where the .json file is coming from. This is needed so lifty can update recipes by checking if a newer version is available.
+</li><li><strong>version</strong>: The current version of the recipe
+</li><li><strong>sources</strong>: An array of object that describe the source files (i.e. template files)
+</li><li><strong>arguments</strong>: An array of objects defining the arguments that your templates might need. More on this later.
+</li><li><strong>templates</strong>: An array of objects defining the templates that Lifty can create. More on this later.
+</li></ul><p>Example:
+</p><pre><code>{
+	&quot;origin&quot;  : &quot;url of where the recipe is stored&quot;,
+	&quot;version&quot; : 1.3,
+	&quot;sources&quot; : [ ... ],
+	&quot;arguments&quot; : [ ... ],
+	&quot;templates&quot; : [ ... ]
+}
+</code></pre><h2 id="sources">sources</h2><p>As explained, this has to be an array of objects. Each object needs to have the following properties:
+</p><ul><li><strong>name</strong>: The name you want the template source file to have once downloaded.
+</li><li><strong>url</strong>: The url of the templates. Lifty uses this to download the template file.
+</li></ul><h2 id="arguments">arguments</h2><p>As explained, this has to be an array of objects. Each object needs to have the following properties:
+</p><ul><li><strong>name</strong>: The name of the argument. This has to be unique.
+</li><li><strong>descriptiveName</strong>: Some descriptive name of the argument. This is used when Lifty needs to query the user about a value for the argument.
+</li><li><strong>default</strong>[Optional]: If you want to provide a default value then you can do it here. This string can use the value of other arguments by using this syntax ”${mainpack}.application”. Here the value of the argument with name mainpack would be substituted for ${mainpack}
+</li></ul><h2 id="templates">templates</h2><p>As explained, this has to be an array of objects. Each object represents something that Lifty can create. Each template can render many source templates if needed (i.e. if you wanted to create an entire project for example). Each object needs to have the following properties:
+</p><ul><li><strong>name</strong>: The name of the template, this has to be unique.
+</li><li><strong>description</strong>: Some description of the things that will created by this template. This will be used when invoking <code>lifty yourRecipe templates</code>
+</li><li><strong>notice</strong>[Optional]: Some message that you want to show the user after the template has been processed. Might be some information explaining how the user should proceed.
+</li><li><strong>folders</strong>[Optional]: an array of strings of any folders that you want to create. Use unix style paths (Lifty will translate them to windows paths if needed).
+</li><li><strong>arguments</strong>: A list of string. The strings should be the names of the arguments that this template needs. Place the arguments in the order you want to query for them. The order is important if some of the arguments depends on any of the others.
+</li><li><strong>files</strong>: A list of objects. The objects needs to have the properties <strong>file</strong> and <strong>destination</strong> where file is the name of the template (the name you gave it in the sources list) and destination is a path that tells lifty where to place the generated file. The destination can also use the ${..} syntax to use argument values.
+</li><li><strong>injections</strong>[Optional]: A list of objects with the properties: file, into, point. file is the name of the source file you want to inject into some other source file. into is the name of the source file you want to inject into. point is the injection point in that file. More about those in the <code>creating your templates</code> section.
+</li><li><strong>dependencies</strong>[Optional]: A list of other templates that this template depends on, that is, this template wants that template to be processed before this one and potentially inject something into the source files.</li></ul><h4>Contents</h4><div><a href="Lifty.html">Lifty</a></div><ol class="toc"> <li><div><a href="Installing+The+Plugin.html">Installing The Plugin</a></div></li><li><div><a href="Teaching+Lifty+Recipes.html">Teaching Lifty Recipes</a></div></li><li><div><a href="Making+Your+Own+Recipe.html">Making Your Own Recipe</a></div><ol class="toc"> <li><div class="current">Creating Your Description File</div></li><li><div><a href="Creating+Your+Templates.html">Creating Your Templates</a></div></li> </ol></li><li><div><a href="Existing+Recipes.html">Existing Recipes</a></div></li><li><div><a href="Changelog.html">Changelog</a></div></li><li class="generated"><div><a href="Contents+in+Depth.html">Contents in Depth</a></div></li><li class="generated"><div><a href="Combined+Pages.html">Combined Pages</a></div></li> </ol>
+          </div>
+        </div>
+        <a class="fork nav" href="http://github.com/Lifty/lifty.github.com"><img alt="Fork me on GitHub" src="img/fork.png"></img></a>
+      </body>
+    </html>

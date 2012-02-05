@@ -1,0 +1,69 @@
+<html manifest="pamflet.manifest">
+      <head>
+        <title>Lifty — Creating Your Templates</title>
+        <link type="text/css" media="screen, projection" rel="stylesheet" href="css/blueprint/screen.css"></link>
+        <link type="text/css" media="screen and (min-device-width: 800px), projection" rel="stylesheet" href="css/blueprint/grid.css"></link>
+        <link type="text/css" media="print" rel="stylesheet" href="css/blueprint/print.css"></link> 
+        <!--[if lt IE 8]>
+          <link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection"/>
+        <![endif]-->
+        <link type="text/css" media="screen, projection" rel="stylesheet" href="css/pamflet.css"></link>
+        <link type="text/css" media="print" rel="stylesheet" href="css/pamflet-print.css"></link>
+        <link type="text/css" media="screen and (min-device-width: 800px), projection" rel="stylesheet" href="css/pamflet-grid.css"></link>
+        <link type="text/css" media="screen, projection" rel="stylesheet" href="css/custom.css"></link>
+        <script src="js/jquery-1.6.2.min.js"></script>
+        <script src="js/pamflet.js"></script>
+        
+        <meta charset="utf-8"></meta>
+        <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+      </head>
+      <body>
+        <a class="page prev nav" href="Creating+Your+Description+File.html">
+            <span class="space">&nbsp;</span>
+            <span class="flip">❧</span>
+          </a><a class="page next nav" href="Existing+Recipes.html">
+            <span class="space">&nbsp;</span>
+            <span>❧</span>
+          </a>
+        <div class="container">
+          <div class="span-16 prepend-1 append-1">
+            <div class="top nav span-16 title">
+              <span>Lifty</span>
+               — Creating Your Templates
+            </div>
+          </div>
+          <div class="span-16 prepend-1 append-1 contents">
+            <h1 id="Creating+Your+Templates">Creating Your Templates</h1><p>Templates are just plain text files with <code>.ssp</code> extensions. You have to use the <code>.ssp</code> extension for legacy reasons right now. Templates are quite simple, you can define 
+placeholders for argument values that will be substituted when the template is rendered and you can define injection points. The injection points are places in the template
+where other templates might want to inject something when the template is rendered.
+</p><p>Here’s a very simple example showing placeholder values (the ones in ${x} where x is the name of the argument it’s a placeholder for): 
+</p><pre><code>package ${snippetpack}
+
+import scala.xml.{NodeSeq}
+import net.liftweb.util.Helpers._
+
+class ${snippetName} {
+  def render = &quot;*&quot; #&gt; &lt;strong&gt;hello world!&lt;/strong&gt;
+}
+</code></pre><p>and here’s an example using injection points, the syntax is //#inject point: nameOfInjectionPoint: 
+</p><pre><code>name := &quot;${projectName}&quot;
+
+scalaVersion := &quot;${scalaVersion}&quot;
+
+libraryDependencies += &quot;net.liftweb&quot; %% &quot;lift-webkit&quot; % &quot;${liftversion}&quot; % &quot;compile-&gt;default&quot;
+
+//#inject point: dependencies
+
+resolvers += &quot;Java.net Maven2 Repository&quot; at &quot;http://download.java.net/maven/2/&quot;
+
+seq(webSettings :_*)
+
+libraryDependencies += &quot;org.mortbay.jetty&quot; % &quot;jetty&quot; % &quot;6.1.22&quot; % &quot;test,container&quot;
+
+libraryDependencies += &quot;org.scala-tools.testing&quot; %% &quot;specs&quot; % &quot;1.6.9&quot; % &quot;test&quot;
+</code></pre><h4>Contents</h4><div><a href="Lifty.html">Lifty</a></div><ol class="toc"> <li><div><a href="Installing+The+Plugin.html">Installing The Plugin</a></div></li><li><div><a href="Teaching+Lifty+Recipes.html">Teaching Lifty Recipes</a></div></li><li><div><a href="Making+Your+Own+Recipe.html">Making Your Own Recipe</a></div><ol class="toc"> <li><div><a href="Creating+Your+Description+File.html">Creating Your Description File</a></div></li><li><div class="current">Creating Your Templates</div></li> </ol></li><li><div><a href="Existing+Recipes.html">Existing Recipes</a></div></li><li><div><a href="Changelog.html">Changelog</a></div></li><li class="generated"><div><a href="Contents+in+Depth.html">Contents in Depth</a></div></li><li class="generated"><div><a href="Combined+Pages.html">Combined Pages</a></div></li> </ol>
+          </div>
+        </div>
+        <a class="fork nav" href="http://github.com/Lifty/lifty.github.com"><img alt="Fork me on GitHub" src="img/fork.png"></img></a>
+      </body>
+    </html>
