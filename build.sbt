@@ -1,13 +1,10 @@
 import com.jsuereth.sbtsite.SiteKeys
 
-// add all setting from the site plugin to the project
 seq(site.settings: _*)
 
-// add all setting from the ghpages plugin to the project
 seq(ghpages.settings: _*)
 
-// read-only git repository URI of the current project
-git.remoteRepo := "git://github.com/Lifty/lifty.github.com.git"
+git.remoteRepo := "git@github.com/Lifty/lifty.github.com.git"
 
 // The most interesting part. I'm adding pamflet output 
 // folder to the site mappings. Now ghpages plugin knows 
