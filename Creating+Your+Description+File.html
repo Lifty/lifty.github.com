@@ -1,3 +1,4 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
 <html manifest="pamflet.manifest">
       <head>
         <title>Lifty — Creating Your Description File</title>
@@ -12,6 +13,7 @@
         <link type="text/css" media="screen and (min-device-width: 800px), projection" rel="stylesheet" href="css/pamflet-grid.css"></link>
         <link type="text/css" media="screen, projection" rel="stylesheet" href="css/custom.css"></link>
         <script src="js/jquery-1.6.2.min.js"></script>
+        <script src="js/jquery.collapse.js"></script>
         <script src="js/pamflet.js"></script>
         
         <meta charset="utf-8"></meta>
@@ -28,8 +30,7 @@
         <div class="container">
           <div class="span-16 prepend-1 append-1">
             <div class="top nav span-16 title">
-              <span>Lifty</span>
-               — Creating Your Description File
+              <span>Lifty</span> — Creating Your Description File
             </div>
           </div>
           <div class="span-16 prepend-1 append-1 contents">
@@ -63,7 +64,12 @@
 </li><li><strong>arguments</strong>: A list of string. The strings should be the names of the arguments that this template needs. Place the arguments in the order you want to query for them. The order is important if some of the arguments depends on any of the others.
 </li><li><strong>files</strong>: A list of objects. The objects needs to have the properties <strong>file</strong> and <strong>destination</strong> where file is the name of the template (the name you gave it in the sources list) and destination is a path that tells lifty where to place the generated file. The destination can also use the ${..} syntax to use argument values.
 </li><li><strong>injections</strong>[Optional]: A list of objects with the properties: file, into, point. file is the name of the source file you want to inject into some other source file. into is the name of the source file you want to inject into. point is the injection point in that file. More about those in the <code>creating your templates</code> section.
-</li><li><strong>dependencies</strong>[Optional]: A list of other templates that this template depends on, that is, this template wants that template to be processed before this one and potentially inject something into the source files.</li></ul><h4>Contents</h4><div><a href="Lifty.html">Lifty</a></div><ol class="toc"> <li><div><a href="Installing+The+Plugin.html">Installing The Plugin</a></div></li><li><div><a href="Teaching+Lifty+Recipes.html">Teaching Lifty Recipes</a></div></li><li><div><a href="Making+Your+Own+Recipe.html">Making Your Own Recipe</a></div><ol class="toc"> <li><div class="current">Creating Your Description File</div></li><li><div><a href="Creating+Your+Templates.html">Creating Your Templates</a></div></li> </ol></li><li><div><a href="Existing+Recipes.html">Existing Recipes</a></div></li><li><div><a href="Changelog.html">Changelog</a></div></li><li class="generated"><div><a href="Contents+in+Depth.html">Contents in Depth</a></div></li><li class="generated"><div><a href="Combined+Pages.html">Combined Pages</a></div></li> </ol>
+</li><li><strong>dependencies</strong>[Optional]: A list of other templates that this template depends on, that is, this template wants that template to be processed before this one and potentially inject something into the source files.</li></ul><div class="tocwrapper show">
+      <a class="tochead nav" style="display: none" href="#toc">❦</a>
+      <a name="toc"></a>
+      <h4 class="toctitle">Contents</h4>
+      <div class="tocbody">
+      <div><a href="index.html">Lifty</a></div><ol class="toc"> <li><div><a href="Installing+The+Plugin.html">Installing The Plugin</a></div></li><li><div><a href="Teaching+Lifty+Recipes.html">Teaching Lifty Recipes</a></div></li><li><div><a href="Making+Your+Own+Recipe.html">Making Your Own Recipe</a></div><ol class="toc"> <li><div class="current">Creating Your Description File</div></li><li><div><a href="Creating+Your+Templates.html">Creating Your Templates</a></div></li> </ol></li><li><div><a href="Existing+Recipes.html">Existing Recipes</a></div></li><li><div><a href="Changelog.html">Changelog</a></div></li><li class="generated"><div><a href="Contents+in+Depth.html">Contents in Depth</a></div></li><li class="generated"><div><a href="Combined+Pages.html">Combined Pages</a></div></li> </ol></div></div>
           </div>
         </div>
         <a class="fork nav" href="http://github.com/Lifty/lifty.github.com"><img alt="Fork me on GitHub" src="img/fork.png"></img></a>

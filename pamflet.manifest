@@ -1,6 +1,7 @@
 CACHE MANIFEST
+# Tue Feb 28 21:30:19 CET 2012
 css/custom.css
-Lifty.html
+index.html
 Installing+The+Plugin.html
 Teaching+Lifty+Recipes.html
 Making+Your+Own+Recipe.html
@@ -19,6 +20,7 @@ css/blueprint/grid.css
 css/blueprint/print.css
 css/blueprint/ie.css
 js/jquery-1.6.2.min.js
+js/jquery.collapse.js
 js/pamflet.js
 css/prettify.css
 js/prettify/prettify.js
