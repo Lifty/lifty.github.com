@@ -1,0 +1,59 @@
+# Changelog
+
+## Lifty 1.7.4 is out - 12th of December 2011
+
+**Notice** You will have to re-install the lift recipe because I changed to JSON description and it's no longer able to parse the old file. Sorry.
+
+To use the new version change your ~/.sbt/plugins/build.sbt so it has 
+
+	> addSbtPlugin("org.lifty" % "lifty" % "1.7.4")
+
+and then start an SBT session and run 
+
+	> lifty delete lift
+	> lifty learn lift https://raw.github.com/Lifty/lifty/master/lifty-recipe/lifty.json
+
+**Changes**
+
+- Added tab-completion (awesome!)
+- No longer use Scalate for template rendering for the following reasons
+	- Less dependencies
+	- Avoid the extra compilation step
+	- Hardly used any of its features
+- Template rendering is now done in parallel
+- Downloading of templates are done in parallel
+
+## Lifty 1.7.3 is out - 24th of November 2011
+
+Bug fix for windows users
+
+## Lifty 1.7.2 is out - 17th of November 2011
+
+Bug fix
+
+## Lifty 1.7.1 is out - 16th of November 2011
+
+Bug fixes
+
+## Lifty 1.7 is out - 16th of November 2011
+
+This has a been a big rewrite of Lifty. It's now works with SBT 0.11.x and templates/descriptions are hosted online so it's easier for the community to help maintain the templates
+
+## Lifty 1.6.1 is out - 20th of March 2011
+
+Lifty 1.6.1 has just been published. This version includes the following:
+
+- Can handle paths that contain spaces in them
+- Templates have been polished by Timothy Perrett and updated to use Lifty 2.3-RC3
+
+## Lifty 1.6 is out - 11th of March 2011
+
+Lifty 1.6 has just been published. This version includes the following
+
+- Works on Windows!
+- Templates have been updated to use Scala 2.8.1 and Lift 2.2
+
+
+## Announcing Lifty - 9th of August 2010
+
+Initial release

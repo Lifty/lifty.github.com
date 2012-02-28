@@ -1,0 +1,10 @@
+# Existing Recipes 
+
+This a list of known recipes for Lifty
+
+## Lifty
+Lifty generates files associated with the Lift framework. It lets you get started with Lift in less than a minute - depending on your internet connection ;) and helps you be more productive in your daily Lift activities.    
+
+- **url**: https://raw.github.com/Lifty/lifty/master/lifty-recipe/lifty.json
+- **Developer**: Mads Hartmann
+

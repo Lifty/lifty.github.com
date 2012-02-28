@@ -1,0 +1,17 @@
+# Teaching Lifty Recipes
+
+Now that you have Lifty installed you need to teach it how to generate different files for you. You do so by pointing lifty to a recipe. Here's what you would have to type to teach Lifty about Lift projects and templates
+
+	> lifty learn lift https://raw.github.com/Lifty/lifty/master/lifty-recipe/lifty.json
+
+This tells `lifty` that you want to add a new recipe and give it the name `lift` and that lifty can find the description of the recipe at the given url.
+
+Now you can create a fresh Lift webapp and start it simply by typing the following in an sbt session:
+
+	> lifty create lift project
+	> reload          
+	> container:start
+	> container:stop
+
+Now point your browser to `http://localhost:8080`
+
