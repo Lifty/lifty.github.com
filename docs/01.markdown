@@ -8,7 +8,7 @@ Add lifty as a global plugin so you can use it in all of your sbt projects. You 
 
 Or if you want to try the SNAPSHOT version    
 
-  	resolvers += Resolver.url("sbt-plugin-snapshots", new URL("http://scalasbt.artifactoryonline.com/scalasbt/sbt-plugin-snapshots/"))(Resolver.ivyStylePatterns)
+    resolvers += Resolver.url("sbt-plugin-snapshots", new URL("http://scalasbt.artifactoryonline.com/scalasbt/sbt-plugin-snapshots/"))(Resolver.ivyStylePatterns)
   
     addSbtPlugin("org.lifty" % "lifty" % "1.7.5-SNAPSHOT")
 

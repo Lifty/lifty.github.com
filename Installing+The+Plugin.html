@@ -39,9 +39,9 @@
 
 addSbtPlugin(&quot;org.lifty&quot; % &quot;lifty&quot; % &quot;1.7.4&quot;)
 </code></pre><p>Or if you want to try the SNAPSHOT version    
-<br/>
-  	resolvers += Resolver.url(“sbt-plugin-snapshots”, new URL(“http://scalasbt.artifactoryonline.com/scalasbt/sbt-plugin-snapshots/”))(Resolver.ivyStylePatterns)
-</p><pre><code>addSbtPlugin(&quot;org.lifty&quot; % &quot;lifty&quot; % &quot;1.7.5-SNAPSHOT&quot;)
+</p><pre><code>resolvers += Resolver.url(&quot;sbt-plugin-snapshots&quot;, new URL(&quot;http://scalasbt.artifactoryonline.com/scalasbt/sbt-plugin-snapshots/&quot;))(Resolver.ivyStylePatterns)
+
+addSbtPlugin(&quot;org.lifty&quot; % &quot;lifty&quot; % &quot;1.7.5-SNAPSHOT&quot;)
 </code></pre><p>Whenever you’re in a SBT session you now have the lifty command avaiable. The lifty command has tab-completion enabled to make it faster/easier to use. Try typing lifty and hit tab in an SBT session.</p><div class="tocwrapper show">
       <a class="tochead nav" style="display: none" href="#toc">❦</a>
       <a name="toc"></a>
