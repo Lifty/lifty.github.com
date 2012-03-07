@@ -1,0 +1,2 @@
+
+PamfletKeys.output := file(".")
