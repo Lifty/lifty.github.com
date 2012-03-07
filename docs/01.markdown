@@ -12,4 +12,8 @@ Or if you want to try the SNAPSHOT version
   
     addSbtPlugin("org.lifty" % "lifty" % "1.7.5-SNAPSHOT")
 
+and then add the following to your `~/.sbt/build.sbt` file
+
+    seq( Lifty.liftySettings : _*)
+
 Whenever you're in a SBT session you now have the lifty command avaiable. The lifty command has tab-completion enabled to make it faster/easier to use. Try typing lifty and hit tab in an SBT session.
